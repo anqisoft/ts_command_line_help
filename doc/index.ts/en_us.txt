@@ -1,0 +1,32 @@
+<en_us>
+  * Creation: January 12, 2024 14:23:52
+  * Function: For command line tools, the display version number (--V,-Version, -V, -V,/Version) or help (/help,/h,/?,-help,-
+ H,-?,-help,-h,-?), or the general function of the operation of operation.
+  * </en_us>
+<en_us>mark: internationalization</en_us>
+<en_us>None</en_us>
+<en_us>Only American English</en_us>
+<en_us>only show simplified Chinese</en_us>
+<en_us>English and simplified Chinese</en_us>
+<en_us>only show traditional Chinese</en_us>
+<en_us>English and traditional Chinese</en_us>
+<en_us>Simplified Chinese</en_us>
+<en_us>All</en_us>
+<en_us>Core code</en_us>
+<en_us>Help</en_us>
+<en_us>version</en_us>
+<en_us>minimum parameters</en_us>
+<en_us>callback method</en_us>
+<en_us>Does it show time?</en_us>
+<en_us>internationalization</en_us>
+<en_us>display help or version number according to the parameters, or call back without displaying time</en_us>
+<en_us>Help</en_us>
+<en_us>version</en_us>
+<en_us>minimum parameters</en_us>
+<en_us>callback method</en_us>
+<en_us>display help or version number according to the parameter, or call back and display the time consumption time</en_us>
+<en_us>Help</en_us>
+<en_us>version</en_us>
+<en_us>minimum parameters</en_us>
+<en_us>callback method</en_us>
+<en_us>internationalization</en_us>

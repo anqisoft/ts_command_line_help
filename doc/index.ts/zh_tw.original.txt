@@ -1,0 +1,31 @@
+<zh_tw>
+  * 創建：2024年1月12日 14:23:52
+  * 功能：針對於命令列工具，提供顯示版本號（--v、--version、-v、-version、/v、/version）或協助（/help、/h、/?、-help、- h、-?、--help、--h、--?）訊息，或真正執行操作的通用功能。
+  * </zh_tw>
+<zh_tw>標記：國際化</zh_tw>
+<zh_tw>無</zh_tw>
+<zh_tw>僅顯示美式英文</zh_tw>
+<zh_tw>僅顯示簡體中文</zh_tw>
+<zh_tw>英文與簡體中文</zh_tw>
+<zh_tw>僅顯示繁體中文</zh_tw>
+<zh_tw>英文與繁體中文</zh_tw>
+<zh_tw>簡繁體中文</zh_tw>
+<zh_tw>全部</zh_tw>
+<zh_tw>核心程式碼</zh_tw>
+<zh_tw>幫助</zh_tw>
+<zh_tw>版本</zh_tw>
+<zh_tw>最少參數數量</zh_tw>
+<zh_tw>回呼方法</zh_tw>
+<zh_tw>是否顯示耗用時間</zh_tw>
+<zh_tw>國際化</zh_tw>
+<zh_tw>根據參數顯示幫助或版本號，或回呼而不顯示耗用時間</zh_tw>
+<zh_tw>幫助</zh_tw>
+<zh_tw>版本</zh_tw>
+<zh_tw>最少參數數量</zh_tw>
+<zh_tw>回呼方法</zh_tw>
+<zh_tw>根據參數顯示幫助或版本號，或回呼並根據需要顯示耗用時間</zh_tw>
+<zh_tw>幫助</zh_tw>
+<zh_tw>版本</zh_tw>
+<zh_tw>最少參數數量</zh_tw>
+<zh_tw>回呼方法</zh_tw>
+<zh_tw>國際化</zh_tw>
