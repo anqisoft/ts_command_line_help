@@ -88,7 +88,7 @@ function done(
 	usedTimeShowed: boolean,
 	i18nFlag: I18nFlag = I18nFlag.all,
 ) {
-	const args: string[] = commandLineArgs.slice(2);
+	const args: string[] = commandLineArgs; // .slice(2);
 	args.forEach((arg) => {
 		switch (arg.toLowerCase()) {
 			case '/help':

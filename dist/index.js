@@ -105,7 +105,7 @@ function isAsyncFunc(func) {
 function done(help, version, parameterMinCount, callback, usedTimeShowed, i18nFlag) {
     var _this = this;
     if (i18nFlag === void 0) { i18nFlag = index_ts_1.I18nFlag.all; }
-    var args = index_ts_1.commandLineArgs.slice(2);
+    var args = index_ts_1.commandLineArgs; // .slice(2);
     args.forEach(function (arg) {
         switch (arg.toLowerCase()) {
             case '/help':
