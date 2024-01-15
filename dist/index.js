@@ -11,8 +11,8 @@
  * <zh_cn>
  * 创建：2024年1月12日 14:23:52
  * 功能：针对于命令行工具，提供显示版本号（--v、--version、-v、-version、/v、/version）或帮助（/help、/h、/?、-help、-h、-?、--help、--h、--?）信息，或真正执行操作的通用功能。
- * showHelpOrVersionOrCallback(help: string, version: string, parameterMinCount: number, callback: (args: string[]) => void) 显示帮助信息或版本号或回调，不显示所用时间
- * showHelpOrVersionOrCallbackAndShowUsedTime(help: string, version: string, parameterMinCount: number, callback: (args: string[]) => void, i18nFlag: I18nFlag = I18nFlag.all) 显示帮助信息或版本号或回调，显示所用时间（可通过参数控制回显耗时所使用的语言）
+ * showHelpOrVersionOrCallback(help: string, version: string, parameterMinCount: number, callback: SyncFunc | AsyncFunc) 显示帮助信息或版本号或回调，不显示所用时间
+ * showHelpOrVersionOrCallbackAndShowUsedTime(help: string, version: string, parameterMinCount: number, callback: SyncFunc | AsyncFunc, i18nFlag: I18nFlag = I18nFlag.all) 显示帮助信息或版本号或回调，显示所用时间（可通过参数控制回显耗时所使用的语言）
  * </zh_cn>
  *
  * <zh_tw>
@@ -86,12 +86,6 @@ function showHelp(help, i18nFlag) {
     if ((i18nFlag & index_ts_1.I18nFlag.zh_tw) === index_ts_1.I18nFlag.zh_tw) {
         console.log(help.zh_tw, '\n');
     }
-}
-function isSyncFunc(func) {
-    return func instanceof Function && !(func instanceof Promise);
-}
-function isAsyncFunc(func) {
-    return (func instanceof Promise);
 }
 /**
  * <en_us>Core Code</en_us><zh_cn>核心代码</zh_cn><zh_tw>核心程式碼</zh_tw>
@@ -191,9 +185,7 @@ function done(help, version, parameterMinCount, callback, usedTimeShowed, i18nFl
  * @param parameterMinCount number <en_us>Minimum number of parameters</en_us><zh_cn>最少参数数量</zh_cn><zh_tw>最少參數數量</zh_tw>
  * @param callback (args: string[]) => void <en_us>Callback methods</en_us><zh_cn>回调方法</zh_cn><zh_tw>回呼方法</zh_tw>
  */
-function showHelpOrVersionOrCallback(help, version, parameterMinCount, 
-// callback: (args: string[]) => void,
-callback) {
+function showHelpOrVersionOrCallback(help, version, parameterMinCount, callback) {
     done(help, version, parameterMinCount, callback, false, index_ts_1.I18nFlag.none);
 }
 exports.showHelpOrVersionOrCallback = showHelpOrVersionOrCallback;
@@ -208,9 +200,7 @@ exports.showHelpOrVersionOrCallback = showHelpOrVersionOrCallback;
  * @param callback (args: string[]) => void <en_us>Callback methods</en_us><zh_cn>回调方法</zh_cn><zh_tw>回呼方法</zh_tw>
  * @param i18nFlag I18nFlag <en_us>Internationalization</en_us><zh_cn>国际化</zh_cn><zh_tw>國際化</zh_tw>
  */
-function showHelpOrVersionOrCallbackAndShowUsedTime(help, version, parameterMinCount, 
-// callback: (args: string[]) => void,
-callback, i18nFlag) {
+function showHelpOrVersionOrCallbackAndShowUsedTime(help, version, parameterMinCount, callback, i18nFlag) {
     if (i18nFlag === void 0) { i18nFlag = index_ts_1.I18nFlag.all; }
     console.log('call showHelpOrVersionOrCallbackAndShowUsedTime');
     done(help, version, parameterMinCount, callback, true, i18nFlag);

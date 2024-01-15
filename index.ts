@@ -10,8 +10,8 @@
  * <zh_cn>
  * 创建：2024年1月12日 14:23:52
  * 功能：针对于命令行工具，提供显示版本号（--v、--version、-v、-version、/v、/version）或帮助（/help、/h、/?、-help、-h、-?、--help、--h、--?）信息，或真正执行操作的通用功能。
- * showHelpOrVersionOrCallback(help: string, version: string, parameterMinCount: number, callback: (args: string[]) => void) 显示帮助信息或版本号或回调，不显示所用时间
- * showHelpOrVersionOrCallbackAndShowUsedTime(help: string, version: string, parameterMinCount: number, callback: (args: string[]) => void, i18nFlag: I18nFlag = I18nFlag.all) 显示帮助信息或版本号或回调，显示所用时间（可通过参数控制回显耗时所使用的语言）
+ * showHelpOrVersionOrCallback(help: string, version: string, parameterMinCount: number, callback: SyncFunc | AsyncFunc) 显示帮助信息或版本号或回调，不显示所用时间
+ * showHelpOrVersionOrCallbackAndShowUsedTime(help: string, version: string, parameterMinCount: number, callback: SyncFunc | AsyncFunc, i18nFlag: I18nFlag = I18nFlag.all) 显示帮助信息或版本号或回调，显示所用时间（可通过参数控制回显耗时所使用的语言）
  * </zh_cn>
  *
  * <zh_tw>
@@ -21,10 +21,12 @@
  */
 
 import {
+	AsyncFunc,
 	commandLineArgs,
 	exitProcess,
 	I18nable,
 	I18nFlag,
+	SyncFunc,
 } from 'https://raw.githubusercontent.com/anqisoft/ts_utils/main/index.ts';
 
 // /*
@@ -54,21 +56,6 @@ function showHelp(help: string | I18nable, i18nFlag: I18nFlag = I18nFlag.all) {
 	if ((i18nFlag & I18nFlag.zh_tw) === I18nFlag.zh_tw) {
 		console.log(help.zh_tw, '\n');
 	}
-}
-
-export interface SyncFunc {
-	(args: string[]): void;
-}
-export interface AsyncFunc {
-	async(args: string[]): void;
-}
-
-function isSyncFunc(func: unknown): func is SyncFunc {
-	return func instanceof Function && !(func instanceof Promise);
-}
-
-function isAsyncFunc(func: unknown): func is AsyncFunc {
-	return (func instanceof Promise);
 }
 
 /**
@@ -195,7 +182,6 @@ export function showHelpOrVersionOrCallback(
 	help: string | I18nable,
 	version: string,
 	parameterMinCount: number,
-	// callback: (args: string[]) => void,
 	callback: SyncFunc | AsyncFunc,
 ) {
 	done(help, version, parameterMinCount, callback, false, I18nFlag.none);
@@ -216,7 +202,6 @@ export function showHelpOrVersionOrCallbackAndShowUsedTime(
 	help: string | I18nable,
 	version: string,
 	parameterMinCount: number,
-	// callback: (args: string[]) => void,
 	callback: SyncFunc | AsyncFunc,
 	i18nFlag: I18nFlag = I18nFlag.all,
 ) {
