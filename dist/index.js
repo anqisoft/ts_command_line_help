@@ -59,6 +59,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 exports.showHelpOrVersionOrCallbackAndShowUsedTime = exports.showHelpOrVersionOrCallback = void 0;
 var index_ts_1 = require("https://raw.githubusercontent.com/anqisoft/ts_utils/main/index.ts");
+var index_ts_2 = require("https://raw.githubusercontent.com/anqisoft/ts_utils/main/index.ts");
 // /*
 //  * <en_us>en_us</en_us>
 //  * <zh_cn>zh_cn</zh_cn>
@@ -144,7 +145,7 @@ function done(help, version, parameterMinCount, callback, usedTimeShowed, i18nFl
     }
     var START_DATE = new Date();
     // callback(args);
-    if (isSyncFunc(callback)) {
+    if (index_ts_2.isSyncFunc(callback)) {
         callback(args);
     }
     else {
@@ -202,7 +203,7 @@ exports.showHelpOrVersionOrCallback = showHelpOrVersionOrCallback;
  */
 function showHelpOrVersionOrCallbackAndShowUsedTime(help, version, parameterMinCount, callback, i18nFlag) {
     if (i18nFlag === void 0) { i18nFlag = index_ts_1.I18nFlag.all; }
-    console.log('call showHelpOrVersionOrCallbackAndShowUsedTime');
+    // console.log('call showHelpOrVersionOrCallbackAndShowUsedTime');
     done(help, version, parameterMinCount, callback, true, i18nFlag);
 }
 exports.showHelpOrVersionOrCallbackAndShowUsedTime = showHelpOrVersionOrCallbackAndShowUsedTime;

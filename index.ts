@@ -21,11 +21,15 @@
  */
 
 import {
-	AsyncFunc,
 	commandLineArgs,
 	exitProcess,
 	I18nable,
 	I18nFlag,
+} from 'https://raw.githubusercontent.com/anqisoft/ts_utils/main/index.ts';
+
+import {
+	AsyncFunc,
+	isSyncFunc,
 	SyncFunc,
 } from 'https://raw.githubusercontent.com/anqisoft/ts_utils/main/index.ts';
 
@@ -205,6 +209,6 @@ export function showHelpOrVersionOrCallbackAndShowUsedTime(
 	callback: SyncFunc | AsyncFunc,
 	i18nFlag: I18nFlag = I18nFlag.all,
 ) {
-	console.log('call showHelpOrVersionOrCallbackAndShowUsedTime');
+	// console.log('call showHelpOrVersionOrCallbackAndShowUsedTime');
 	done(help, version, parameterMinCount, callback, true, i18nFlag);
 }
