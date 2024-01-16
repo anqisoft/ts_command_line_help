@@ -113,7 +113,7 @@ function done(help, version, parameterMinCount, callback, usedTimeShowed) {
                 I18N_MESSAGE.zh_tw += `help:\n ${help}\n`;
             }
         }
-        if (!LENGTH_IS_LESS) {
+        if (LENGTH_IS_LESS) {
             I18N_MESSAGE.en_us +=
                 `[Error]${parameterMinCount} parameters are required, but only ${LENGTH} are passed in.`;
             I18N_MESSAGE.zh_cn += `【错误】需${parameterMinCount}个参数，但仅传入了${LENGTH}个。`;
