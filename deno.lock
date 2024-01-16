@@ -107,6 +107,7 @@
     "https://deno.land/std@0.211.0/fs/exists.ts": "d2757ef764eaf5c6c5af7228e8447db2de42ab084a2dae540097f905723d83f5",
     "https://deno.land/std@0.211.0/path/_os.ts": "8fb9b90fb6b753bd8c77cfd8a33c2ff6c5f5bc185f50de8ca4ac6a05710b2c15",
     "https://deno.land/std@0.211.0/path/separator.ts": "2b5a590d4f1942e70650ee7421d161c24ec7d3b94b49981e4138ae07397fb2d2",
+    "https://raw.githubusercontent.com/anqisoft/ts_command_line_help/main/index.ts": "fddd3acd051581ff0a2036f26887e92bcef10df7035558b30794b1f4e803d756",
     "https://raw.githubusercontent.com/anqisoft/ts_utils/main/index.ts": "d80e49dff7cfcfeb847eafee049dacd5dea25cea5948ecec44c366fbbc3748c4"
   }
 }
