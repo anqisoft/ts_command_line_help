@@ -28,7 +28,7 @@ import { isSyncFunc, } from 'https://raw.githubusercontent.com/anqisoft/ts_utils
  * @param callback {(args: string[]) => void} <en_us>callback method</en_us><zh_cn>回调方法</zh_cn><zh_tw>回調方法</zh_tw>
  * @param usedTimeShowed {boolean} <en_us>Does it show time?</en_us><zh_cn>是否显示耗用时间</zh_cn><zh_tw>是否顯示耗用時間</zh_tw>
  */
-function done(help, version, parameterMinCount, callback, usedTimeShowed) {
+async function done(help, version, parameterMinCount, callback, usedTimeShowed) {
     const args = COMMAND_LINE_ARGS; // .slice(2);
     const ARG_MAX_INDEX = args.length - 1;
     let needShowHelp = false;
@@ -132,15 +132,32 @@ function done(help, version, parameterMinCount, callback, usedTimeShowed) {
         /* falls through */
     }
     const START_DATE = new Date();
+    // console.log(
+    // 	"typeof callback === 'function'",
+    // 	typeof callback === 'function',
+    // 	'callback instanceof Function',
+    // 	callback instanceof Function,
+    // 	'callback instanceof Promise',
+    // 	callback instanceof Promise,
+    // 	"'async' in callback",
+    // 	'async' in callback,
+    // );
     // callback(args);
     if (isSyncFunc(callback)) {
+        // console.log('isSyncFunc');
         callback(args);
     }
     else {
-        (async () => {
-            await callback.async(args);
-        })();
+        // console.log('isAsyncFunc');
+        // console.log('before async');
+        // (async () => {
+        // 	await callback(args);
+        // 	console.log('call async');
+        // })();
+        await callback(args);
+        // console.log('call async');
     }
+    // console.log(usedTimeShowed);
     if (!usedTimeShowed) {
         return;
     }
